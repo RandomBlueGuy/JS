@@ -17,8 +17,7 @@ console.log(myFunction(new Date("2000/01/01"), new Date(2000, 00, 01)));  //  tr
 
 
 function myFunction(dateX, dateY) {
+  
   return (dateX.toLocaleDateString("en-GB") == dateY.toLocaleDateString("en-GB") ? true : false);
-  //return (Date.parse(dateY) == Date.parse(dateX) ? true : false); // SOLUCIÓN VÁLIDA
-  return (dateX.toString() === dateY.toString() ? true : false);  // SOLUCIÓN VÁLIDA
 
 }
