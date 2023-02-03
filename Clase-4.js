@@ -5,13 +5,15 @@ console.log("/*----------------------------------------------------------*/");
 console.log("EJERCICIO 1");
 console.log("/*----------------------------------------------------------*/");
 
-console.log(myFunction({a:1}));          //undefined
-console.log(myFunction({a:{b:{c:3}}}));  //{c:3}
-console.log(myFunction({b:{a:1}}));      //undefined 
-console.log(myFunction({a:{b:2}}));      //2
+console.log(myFunction({a:1}));                                                 //undefined
+console.log(myFunction({a:{b:{c:3}}}));                                         //{c:3}
+console.log(myFunction({b:{a:1}}));                                             //undefined 
+console.log(myFunction({a:{b:2}}));                                             //2
+console.log(myFunction({w:{q:{t:{s:{f:{c:{z:{s:{a:{b:"Pls staph"}}}}}}}}}}));   //{b:"Pls staph"}
+console.log(myFunction({w:{q:{t:{s:{f:{c:{z:{s:{a:{s:5}}}}}}}}}}));             //undefined
 
 function myFunction(obj) {
-  return('a' in obj === true ? obj?.a?.b : undefined);
+  return obj.hasOwnProperty("a") === true ? obj?.a?.b : typeof obj === 'object' ? myFunction(Object.values(obj)[0]) : undefined;
 }
 
 console.log("");
