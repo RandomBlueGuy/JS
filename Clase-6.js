@@ -29,9 +29,23 @@ console.log(fibonacci(5));   //8
 console.log(fibonacci(9));   //55 - ejercicio extra de prueba
 
 function fibonacci(n) {
+    /* METODO ITERATIVO SIMPLE
     let res = [1 , 1];
     for (let i = 2; i <= n; i++) {
-        res.push(res[i-2] + res[i-1] );
+        res.push(res[i-2] + res[i-1]);
     }
-    return res[res.length - 1];
+    return res[res.length - 1];*/
+
+   // return n <= 1 ? 1 : (fibonacci(n-1) + fibonacci(n-2)); // Aún no comprendo muy bien la iteratividad, pero entiendo que esta función se ejecuta de forma iterativa como un for
+
+   //return n <= 1 ? 1 : recursion (n, [1,1]);// ESTE MODELO LO ENTIENDO MÁS PUESTO QUE HAY UN ARRAY QUE GUARDA LA SECUENCIA FIBONACCI CON CADA ITERACIÓN
+}
+
+function recursion (n, res){
+    if (n >= res.length) { 
+        res.push(res[res.length-2] + res[res.length-1]);
+        return recursion(n , res);
+    } else {
+        return res[res.length - 1];
+    }
 }
