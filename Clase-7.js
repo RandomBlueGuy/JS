@@ -39,6 +39,6 @@ console.log (clone([true, false, true]));   //[true, false, true, [true, false, 
 
 function clone(arr) {
   arr.push(arr.map(a => a));   //Me gustaría poder reducirlo a una sola linea, sin embargo, cuando lo intento, retorna el length del array
-  //return arr;
+  return arr;
 }
 
