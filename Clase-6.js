@@ -36,7 +36,7 @@ function fibonacci(n) {
     }
     return res[res.length - 1];*/
 
-    return n <= 1 ? 1 : (fibonacci(n-1) + fibonacci(n-2)); // Aún no comprendo muy bien la iteratividad, pero entiendo que esta función se ejecuta de forma iterativa como un for
+    return n <= 1 ? 1 : (fibonacci(n-1) + fibonacci(n-2)); // Aún no comprendo muy bien la recursividad aquí dada, pero entiendo que esta función se ejecuta de forma iterativa como un for
 
    //return n <= 1 ? 1 : recursion (n, [1,1]);// ESTE MODELO LO ENTIENDO MÁS PUESTO QUE HAY UN ARRAY QUE GUARDA LA SECUENCIA FIBONACCI CON CADA ITERACIÓN
 }
