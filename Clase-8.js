@@ -10,8 +10,8 @@ console.log(getVoteCount({upvotes:132, downvotes:132}));//RESULTADO ESPERADO:   
 console.log(getVoteCount({upvotes1:132, downvotes:132}))          
 
 function getVoteCount(obj) {
-    return typeof(obj.upvotes) === 'number' && typeof(obj.downvotes) === 'number' ? obj.upvotes - obj.downvotes : "uno de los datos no es un número";
-    //return obj.upvotes - obj.downvotes;
+    return typeof(obj.upvotes) === 'number' && typeof(obj.downvotes) === 'number' ? obj.upvotes - obj.downvotes : "una de las propiedades del objeto corresponde a .upvotes o .downvotes";
+    //return obj.upvotes -git obj.downvotes;
 }
 
 
