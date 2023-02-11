@@ -28,10 +28,15 @@ console.log(flatten([[true, false], [false, false], [[true]]])); //[true, false,
 console.log(flatten([[true, [[[false]]]], [[[[false]]], false], [[true, [false, true, [false]]]]])); //[true, false, false, false, true, false, true, false]
 
 function flatten(arr) {
+  arr = arr.reduce((element1, element2) => element1.concat(element2), []);
+  return arr.map(item => Array.isArray(item)).includes(true) ? flatten (arr) : arr;
+
+  //Solución a partir de iteración
+  /*
   while (arr.map(item => Array.isArray(item)).includes(true) == true) {
     arr = arr.reduce((element1, element2) => element1.concat(element2), []);
   }
-  return arr;
+  return arr;*/
 }
 
 console.log("/*----------------------------------------------------------*/");
