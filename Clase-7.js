@@ -24,9 +24,14 @@ console.log(flatten([[1, 2], [3, 4]]));                 //[1, 2, 3, 4]
 console.log(flatten([[1], [2], [3], [4]]));             //[1, 2, 3, 4]
 console.log(flatten([["a", "b"], ["c", "d"]]) );        //["a", "b", "c", "d"]
 console.log(flatten([[true, false], [false, false]]));  //[true, false, false, false]
+console.log(flatten([[true, false], [false, false], [[true]]])); //[true, false, false, false, true]
+console.log(flatten([[true, [[[false]]]], [[[[false]]], false], [[true, [false, true, [false]]]]])); //[true, false, false, false, true, false, true, false]
 
 function flatten(arr) {
-  return arr.reduce((a, b) => a.concat(b)); //Quería lograr resolverlo a través de Maps, pero no pude acceder a los valores de los arrays internos
+  while (arr.map(item => Array.isArray(item)).includes(true) == true) {
+    arr = arr.reduce((element1, element2) => element1.concat(element2), []);
+  }
+  return arr;
 }
 
 console.log("/*----------------------------------------------------------*/");
