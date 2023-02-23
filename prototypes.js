@@ -1,23 +1,23 @@
 console.log("EJERCICIO 1");
 
-function persona (nombre, peso, altura) {
+function Persona (nombre, peso, altura) {
     this.nombre = nombre,
     this.peso = peso,
     this.altura = altura
 }
 
-persona.prototype = {
+Persona.prototype = {
 
-    saludar (nombre) {
+    saludar(nombre) {
         return `Hola ${nombre}, mi nombre es ${this.nombre}`
     },
 
-    bmi (){
+    bmi(){
         return `El bmi de ${this.nombre} es: ${(this.peso / (this.altura*this.altura)).toFixed(2)}`;
     }
 }
 
-const pedro = new persona("Pedro", 72, 1.5);
+const pedro = new Persona("Pedro", 72, 1.5);
 console.log(pedro.saludar("Maria")); // "Hola Maria, me llamo Pedro"
 console.log(pedro.bmi()); // 32
 //////////////////////////////////////////////////////
