@@ -36,7 +36,7 @@ for (let index = 1; index < Math.random() * 5; index++) {
 }
 
 console.log("----------------------");
-console.log(JSON.stringify(newFactura));
+console.log(JSON.stringify(newFactura, null, 2));
 console.log("----------------------");
 
 console.log("----------------------");
